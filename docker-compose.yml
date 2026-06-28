@@ -23,6 +23,8 @@ services:
       - MONGO_URI=mongodb://mongo:27017/moderation
       - JWT_SECRET=${JWT_SECRET}
       - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      - uploads_data:/app/uploads        
 
   client:
     build: ./client
@@ -35,3 +37,4 @@ services:
 
 volumes:
   mongo_data:
+  uploads_data:                          
